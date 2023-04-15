@@ -45,25 +45,51 @@ $(function () {
   //
   
   // Added timeNow variable, which displays the current date/time within the header.
-  var timeNow = dayjs();
-      $('#currentDay').text(timeNow.format('dddd, MMMM D YYYY, h:mm a'));
-      console.log(timeNow);
+var timeNow = dayjs();
+  $('#currentDay').text(timeNow.format('dddd, MMMM D YYYY, h:mm a'));
+  console.log(timeNow);
+
+var hourNow = dayjs().format('HH');
+  console.log(hourNow);
   
 // Added variables for the hours of the workday, assigning them to the IDs of their respetive hour blocks. Next step is hopefully to create conditional statements to determine color.
-  var nineAM = $("#hour-9");
-  var tenAM = $('#hour-10');
-  var elevenAM =$('#hour-11');
-  var twelvePM =$('#hour-12');
-  var onePM = $('#hour-1');
-  var twoPM = $('#hour-2');
-  var threePM = $('#hour-3');
-  var fourPM = $('#hour-4');
-  var fivePM = $('#hour-5');
-  var sixPM = $('#hour-6');
+  var nineAm = $("#hour-9");
+  var tenAm = $('#hour-10');
+  var elevenAm =$('#hour-11');
+  var twelvePm =$('#hour-12');
+  var onePm = $('#hour-1');
+  var twoPm = $('#hour-2');
+  var threePm = $('#hour-3');
+  var fourPm = $('#hour-4');
+  var fivePm = $('#hour-5');
+  var sixPm = $('#hour-6');
 
   
 
-  // if ()
+  if (hourNow > nineAm) {
+    nineAm.classList.remove("present");
+    nineAm.classList.remove("future");
+    nineAm.classlist.add("past");
+  }
+  
+  if (hournow <= nineAm) {
+    nineAm.classlist.add("future");
+    nineAm.classList.remove("past")
+    nineAm.classList.remove("present");
+  }
+
+  if (hourNow > tenAm) {
+    tenAm.classList.add("future");
+  }
+  
+  if (hourNow = tenAm) {
+
+  }
+
+  if (hourNow < sixPm) {
+    sixPm.addClass('future');
+
+  }
 
 
 
