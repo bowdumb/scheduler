@@ -46,8 +46,10 @@ $(function () {
   
   // Added timeNow variable, which displays the current date within the header.
   var dateNow = dayjs();
-      $('#currentDay').text(dateNow.format('MMM D, YYYY'));
+      $('#currentDay').text(dateNow.format('dddd, MMMM D YYYY, h:mm a'));
       console.log(dateNow);
+  
+
 
   
 
