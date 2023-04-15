@@ -45,14 +45,11 @@ $(function () {
   //
   
   // Added timeNow variable, which displays the current date within the header.
-  var timeNow = dayjs();
-      $('#currentDay').text(timeNow.format('MMM D, YYYY'));
-      console.log(timeNow);
-  // var dateEl = $('#hour-11');
-  // var today = dayjs();
-  // dateToday.text(today.format('dddd, MMMM D'));
-  // console.log(dateEl);
-  // var nineAM = dayjs('')
+  var dateNow = dayjs();
+      $('#currentDay').text(dateNow.format('MMM D, YYYY'));
+      console.log(dateNow);
+
+  
 
   // if ()
 
