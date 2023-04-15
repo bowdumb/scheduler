@@ -51,6 +51,7 @@ var timeNow = dayjs()
 
 var hourNow = dayjs().format('H')
   console.log(hourNow);
+  console.log(timeNow);
   
 // Added variables for the hours of the workday, assigning them to the IDs of their respetive hour blocks. Next step is hopefully to create conditional statements to determine color.
 var nineAm = $("#hour-9")
@@ -85,33 +86,32 @@ console.log(nineAmTime);
   //   nineAm.removeClass('future');
   // }
 
-  if (hourNow == timeNow) {
+  if (timeNow == nineAmTime) {
     nineAm.removeClass('past');
     nineAm.removeClass('future');
     nineAm.addClass('present');
-  } else if (hourNow > timeNow) {
+  } else if (timeNow > nineAmTime) {
     nineAm.removeClass('present')
     nineAm.removeClass('future')
-    nineAm.addclass('past')
-  } else if (hourNow < timeNow) {
-    
+    nineAm.addClass('past')
+  } else if (timeNow < nineAmTime) {
     nineAm.removeClass('past')
     nineAm.removeClass('present')
     nineAm.addClass('future')
   }
 
-  if (hourNow == tenAmTime) {
+  if (timeNow == tenAmTime) {
+    tenAm.removeClass('past')
+    tenAm.removeClass('future')
     tenAm.addClass('present')
-    tenAm.removeClass('past')
+  } else if (timeNow > tenAmTime) {
+    tenAm.removeClass('present')
     tenAm.removeClass('future')
-  } else if (hourNow > tenAmTime) {
     tenAm.addclass('past')
-    tenAm.removeClass('present')
-    tenAm.removeClass('future')
-  } else if (hourNow < tenAmTime) {
-    tenAm.addClass('future')
+  } else if (timeNow < tenAmTime) {
     tenAm.removeClass('past')
     tenAm.removeClass('present')
+    tenAm.addClass('future')
   }
 
   // if (hourNow < nineAm) {
