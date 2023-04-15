@@ -45,43 +45,73 @@ $(function () {
   //
   
   // Added timeNow variable, which displays the current date/time within the header.
-var timeNow = dayjs();
+var timeNow = dayjs()
   $('#currentDay').text(timeNow.format('dddd, MMMM D YYYY, h:mm a'));
   console.log(timeNow);
 
-var hourNow = dayjs().format('HH A');
+var hourNow = dayjs().format('H')
   console.log(hourNow);
   
 // Added variables for the hours of the workday, assigning them to the IDs of their respetive hour blocks. Next step is hopefully to create conditional statements to determine color.
-  var nineAm = $("#hour-9");
-  var tenAm = $('#hour-10');
-  var elevenAm =$('#hour-11');
-  var twelvePm =$('#hour-12');
-  var onePm = $('#hour-1');
-  var twoPm = $('#hour-2');
-  var threePm = $('#hour-3');
-  var fourPm = $('#hour-4');
-  var fivePm = $('#hour-5');
-  var sixPm = $('#hour-6');
+var nineAm = $("#hour-9")
+var tenAm = $('#hour-10')
+var elevenAm = $('#hour-11')
+var twelvePm = $('#hour-12')
+var onePm = $('#hour-1')
+var twoPm = $('#hour-2')
+var threePm = $('#hour-3')
+var fourPm = $('#hour-4')
+var fivePm = $('#hour-5')
+var sixPm = $('#hour-6')
 
 
+var nineAmTime = dayjs().set('hour', 9)
+var tenAmTime  = dayjs().set('hour', 10)
+var elevenAmTime = dayjs().set('hour', 11)
+var twelvePmTime = dayjs().set('hour', 12)
+var onePmTime = dayjs().set('hour', 1)
+var twoPmTime = dayjs().set('hour', 2)
+var threePmTime = dayjs().set('hour', 3)
+var fourPmTime = dayjs().set('hour', 4)
+var fivePmTime = dayjs().set('hour', 5)
+var sixPmTime = dayjs().set('hour', 6)
 
-  var nineAmTime = dayjs().set('hour', 9)
-  console.log(nineAmTime);
+console.log(nineAmTime);
   
 
-  if (hourNow > nineAmTime) {
-    nineAm.addClass("past");
-    nineAm.removeClass('present');
+  // if (hourNow > nineAmTime) {
+  //   nineAm.addClass(past)
+  //   nineAm.removeClass('present');
+  //   nineAm.removeClass('future');
+  // }
+
+  if (hourNow == timeNow) {
+    nineAm.removeClass('past');
     nineAm.removeClass('future');
+    nineAm.addClass('present');
+  } else if (hourNow > timeNow) {
+    nineAm.removeClass('present')
+    nineAm.removeClass('future')
+    nineAm.addclass('past')
+  } else if (hourNow < timeNow) {
+    
+    nineAm.removeClass('past')
+    nineAm.removeClass('present')
+    nineAm.addClass('future')
   }
 
-  if (hourNow == nineAmTime) {
-    nineAm.addClass('present')
-  } else if (hourNow > nineAmTime) {
-    nineAm.addclass('past');
-  } else if (hourNow < nineAmTime) {
-    nineAm.addClass('future');
+  if (hourNow == tenAmTime) {
+    tenAm.addClass('present')
+    tenAm.removeClass('past')
+    tenAm.removeClass('future')
+  } else if (hourNow > tenAmTime) {
+    tenAm.addclass('past')
+    tenAm.removeClass('present')
+    tenAm.removeClass('future')
+  } else if (hourNow < tenAmTime) {
+    tenAm.addClass('future')
+    tenAm.removeClass('past')
+    tenAm.removeClass('present')
   }
 
   // if (hourNow < nineAm) {
