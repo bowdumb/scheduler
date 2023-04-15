@@ -60,4 +60,6 @@ textarea {
 
 #currentDay {
   font-size: 22px;
+  font-weight:bolder;
+  margin-top: 40px;
 }

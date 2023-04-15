@@ -44,12 +44,22 @@ $(function () {
   // current hour in 24-hour time?
   //
   
-  // Added timeNow variable, which displays the current date within the header.
-  var dateNow = dayjs();
-      $('#currentDay').text(dateNow.format('dddd, MMMM D YYYY, h:mm a'));
-      console.log(dateNow);
+  // Added timeNow variable, which displays the current date/time within the header.
+  var timeNow = dayjs();
+      $('#currentDay').text(timeNow.format('dddd, MMMM D YYYY, h:mm a'));
+      console.log(timeNow);
   
-
+// Added variables for the hours of the workday, assigning them to the IDs of their respetive hour blocks. Next step is hopefully to create conditional statements to determine color.
+  var nineAM = $("#hour-9");
+  var tenAM = $('#hour-10');
+  var elevenAM =$('#hour-11');
+  var twelvePM =$('#hour-12');
+  var onePM = $('#hour-1');
+  var twoPM = $('#hour-2');
+  var threePM = $('#hour-3');
+  var fourPM = $('#hour-4');
+  var fivePM = $('#hour-5');
+  var sixPM = $('#hour-6');
 
   
 
