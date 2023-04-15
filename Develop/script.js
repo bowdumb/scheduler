@@ -44,12 +44,19 @@ $(function () {
   // current hour in 24-hour time?
   //
   
+  // Added timeNow variable, which displays the current date within the header.
   var timeNow = dayjs();
-      $('#test').text(timeNow.format('MMM D, YYYY'));
-  
-  console.log(timeNow);
+      $('#currentDay').text(timeNow.format('MMM D, YYYY'));
+      console.log(timeNow);
+  // var dateEl = $('#hour-11');
+  // var today = dayjs();
+  // dateToday.text(today.format('dddd, MMMM D'));
+  // console.log(dateEl);
+  // var nineAM = dayjs('')
 
-  
+  // if ()
+
+
 
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
