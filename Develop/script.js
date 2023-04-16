@@ -3,9 +3,7 @@
 // in the html.
 
 // Added timeNow variable, which displays the current date/time within the header.
-var timeNow = dayjs()
-  $('#currentDay').text(timeNow.format('dddd, MMMM D YYYY, h:mm a'));
-  console.log(timeNow);
+
 
 
 //This code does not work, but I feel like it might be heading in the right direction. Commenting out for now.
@@ -44,7 +42,7 @@ $(function () {
     
   //   var btnNodes = saveButtons[i]
     
-    
+ 
 
 
   // } )
@@ -58,10 +56,15 @@ $(function () {
   //
 
 //Removing hourNow variable as I think it was a misstep.
+var timeNow = dayjs()
+$('#currentDay').text(timeNow.format('dddd, MMMM D YYYY, h:mm a'));
+// console.log(timeNow);
 
-// var hourNow = dayjs().format('H')
-//   console.log(hourNow);
-//   console.log(timeNow);
+var hourNow = dayjs().format('H')
+  console.log(hourNow);
+  // console.log(timeNow);
+  // console.log(nineAmTime);
+  console.log(timeNow.hour());
   
 // Added variables for the hours of the workday, assigning them to the IDs of their respetive hour blocks. Next step is hopefully to create conditional statements to determine color.
 var nineAm = $("#hour-9")
@@ -76,182 +79,166 @@ var fivePm = $('#hour-5')
 var sixPm = $('#hour-6')
 
 // Created additional variables to assign each block a time using the .set() property of Day.js to be compared against the current global time in order to assess appropriate color status.
-var nineAmTime = dayjs().set('hour', 9)
-var tenAmTime  = dayjs().set('hour', 10)
-var elevenAmTime = dayjs().set('hour', 11)
-var twelvePmTime = dayjs().set('hour', 12)
-var onePmTime = dayjs().set('hour', 1)
-var twoPmTime = dayjs().set('hour', 2)
-var threePmTime = dayjs().set('hour', 3)
-var fourPmTime = dayjs().set('hour', 4)
-var fivePmTime = dayjs().set('hour', 5)
-var sixPmTime = dayjs().set('hour', 6)
+// var nineAmTime = dayjs().set('hour', 9)
+// var tenAmTime  = dayjs().set('hour', 10)
+// var elevenAmTime = dayjs().set('hour', 11)
+// var twelvePmTime = dayjs().set('hour', 12).set('minute', 59).set('second', 59)
+// var onePmTime = dayjs().set('hour', 1).set('minute', 59).set('seconds', 59);
+// var twoPmTime = dayjs().set('hour', 2)
+// var threePmTime = dayjs().set('hour', 3)
+// var fourPmTime = dayjs().set('hour', 4)
+// var fivePmTime = dayjs().set('hour', 5)
+// var sixPmTime = dayjs().set('hour', 6)
 
 
   
 
 // Added conditional 'if' statements for all blocks between 9am-6pm intended to check against local time, remove existing classes, and replace with appropriate classes where appropriate.
-  if (timeNow == nineAmTime) {
+  if (timeNow.hour() == 9) {
     nineAm.removeClass('past');
     nineAm.removeClass('future');
     nineAm.addClass('present');
-  }
-  if (timeNow < nineAmTime) {
+  } else if (timeNow.hour() < 9) {
     nineAm.removeClass('past');
     nineAm.removeClass('present');
     nineAm.addClass('future');
-  }
-  if (timeNow > nineAmTime) {
+  } else if (timeNow.hour() > 9) {
     nineAm.removeClass('present');
     nineAm.removeClass('future');
     nineAm.addClass('past');
   }
   
   
-  if (timeNow == tenAmTime) {
+  if (timeNow.hour() == 10) {
     tenAm.removeClass('past');
     tenAm.removeClass('future');
     tenAm.addClass('present');
-  }
-  if (timeNow < tenAmTime) {
+  } else if (timeNow.hour() < 10) {
     tenAm.removeClass('past');
     tenAm.removeClass('present');
     tenAm.addClass('future');
-  }
-  if (timeNow > tenAmTime) {
+  } else if (timeNow.hour() > 10) {
     tenAm.removeClass('present');
     tenAm.removeClass('future');
     tenAm.addClass('past');
   } 
 
-  if (timeNow == elevenAmTime) {
+  if (timeNow.hour() == 11) {
     elevenAm.removeClass('past');
     elevenAm.removeClass('future');
     elevenAm.addClass('present');
-  }
-  if (timeNow < elevenAmTime) {
+  } else if (timeNow.hour() < 11) {
     elevenAm.removeClass('past');
     elevenAm.removeClass('present');
     elevenAm.addClass('future');
-  }
-  if (timeNow > elevenAmTime) {
+  } else if (timeNow.hour() > 11) {
     elevenAm.removeClass('present');
     elevenAm.removeClass('future');
     elevenAm.addClass('past');
   } 
   
+  // console.log(timeNow);
+  // console.log(twelvePmTime)
   
-  if (timeNow == twelvePmTime) {
-    twelvePm.removeClass('past');
-    twelvePm.removeClass('future');
+  if (timeNow.hour() == 12) {
     twelvePm.addClass('present');
-  }
-  if (timeNow < twelvePmTime) {
+    twelvePm.removeClass('past');
+    twelvePm.removeClass('future');
+  } else if (timeNow.hour() < 12) {
+    twelvePm.addClass('future');
     twelvePm.removeClass('past');
     twelvePm.removeClass('present');
-    twelvePm.addClass('future');
-  }
-  if (timeNow > twelvePmTime) {
+    
+  } else if (timeNow.hour() > 12) {
+    twelvePm.addClass('past');
     twelvePm.removeClass('present');
     twelvePm.removeClass('future');
-    twelvePm.addClass('past');
+    
   }
 
-  if (timeNow == onePmTime) {
+  if (timeNow.hour() == 13) {
     onePm.removeClass('past');
     onePm.removeClass('future');
     onePm.addClass('present');
-  }
-  if (timeNow < onePmTime) {
+  } else if (timeNow.hour() < 13) {
     onePm.removeClass('past');
     onePm.removeClass('present');
     onePm.addClass('future');
-  }
-  if (timeNow >onePmTime) {
+  } else if (timeNow.hour() > 13) {
     onePm.removeClass('present');
     onePm.removeClass('future');
     onePm.addClass('past');
   }
 
-  if (timeNow == twoPmTime) {
+  if (timeNow.hour() == 14) {
     twoPm.removeClass('past');
     twoPm.removeClass('future');
     twoPm.addClass('present');
-  }
-  if (timeNow < twoPmTime) {
+  } else if (timeNow.hour() < 14) {
     twoPm.removeClass('past');
     twoPm.removeClass('present');
     twoPm.addClass('future');
-  }
-  if (timeNow > twoPmTime) {
+  } else if (timeNow.hour() > 14) {
     twoPm.removeClass('present');
     twoPm.removeClass('future');
     twoPm.addClass('past');
   }
 
 
-  if (timeNow == threePmTime) {
+  if (timeNow.hour() == 15) {
     threePm.removeClass('past');
     threePm.removeClass('future');
     threePm.addClass('present');
-  }
-  if (timeNow < threePmTime) {
+  } else if (timeNow.hour() < 15) {
     threePm.removeClass('past');
     threePm.removeClass('present');
     threePm.addClass('future');
-  }
-  if (timeNow > threePmTime) {
+  } else if (timeNow.hour() > 15) {
     threePm.removeClass('present');
     threePm.removeClass('future');
     threePm.addClass('past');
   }
 
 
-  if (timeNow == fourPmTime) {
+  if (timeNow.hour() == 16) {
     fourPm.removeClass('past');
     fourPm.removeClass('future');
     fourPm.addClass('present');
-  }
-  if (timeNow < fourPmTime) {
+  } else if (timeNow.hour() < 16) {
     fourPm.removeClass('past');
     fourPm.removeClass('present');
     twoPm.addClass('future');
-  }
-  if (timeNow > fourPmTime) {
+  } else if (timeNow.hour() > 16) {
     fourPm.removeClass('present');
     fourPm.removeClass('future');
     fourPm.addClass('past');
   }
 
 
-  if (timeNow == fivePmTime) {
+  if (timeNow.hour() == 17) {
     fivePm.removeClass('past');
     fivePm.removeClass('future');
     fivePm.addClass('present');
-  }
-  if (timeNow < fivePmTime) {
+  } else if (timeNow.hour() < 17) {
     fivePm.removeClass('past');
     fivePm.removeClass('present');
     fivePm.addClass('future');
-  }
-  if (timeNow > fivePmTime) {
+  } else if (timeNow.hour() > 17) {
     fivePm.removeClass('present');
     fivePm.removeClass('future');
     fivePm.addClass('past');
   }
 
 
-  if (timeNow == sixPmTime) {
+  if (timeNow.hour() == 18) {
     sixPm.removeClass('past');
     sixPm.removeClass('future');
     sixPm.addClass('present');
-  }
-  if (timeNow < sixPmTime) {
+  } else if (timeNow.hour() < 18) {
     sixPm.removeClass('past');
     sixPm.removeClass('present');
     sixPm.addClass('future');
-  }
-  if (timeNow > sixPmTime) {
+  }else if (timeNow.hour() > 18) {
     sixPm.removeClass('present');
     sixPm.removeClass('future');
     sixPm.addClass('past');
