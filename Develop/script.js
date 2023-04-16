@@ -8,8 +8,13 @@ var timeNow = dayjs()
   console.log(timeNow);
 
 
+//This code does not work, but I feel like it might be heading in the right direction. Commenting out for now.
+//   $('button').each(function(index) {
+//     this.on('click', function ()
+//       localStorage.setItem('.description', 'id'))
+// });
 
-$() (function () {
+$(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -19,7 +24,6 @@ $() (function () {
 
   
 
-  
   
   
   // var saveButtons = document.querySelectorAll('.saveBtn');
@@ -52,8 +56,7 @@ $() (function () {
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
   //
-  
-  
+
 //Removing hourNow variable as I think it was a misstep.
 
 // var hourNow = dayjs().format('H')
@@ -84,7 +87,7 @@ var fourPmTime = dayjs().set('hour', 4)
 var fivePmTime = dayjs().set('hour', 5)
 var sixPmTime = dayjs().set('hour', 6)
 
-console.log(nineAmTime);
+
   
 
 // Added conditional 'if' statements for all blocks between 9am-6pm intended to check against local time, remove existing classes, and replace with appropriate classes where appropriate.
@@ -92,11 +95,13 @@ console.log(nineAmTime);
     nineAm.removeClass('past');
     nineAm.removeClass('future');
     nineAm.addClass('present');
-  } else if (timeNow < nineAmTime) {
+  }
+  if (timeNow < nineAmTime) {
     nineAm.removeClass('past');
     nineAm.removeClass('present');
     nineAm.addClass('future');
-  } else if (timeNow > nineAmTime) {
+  }
+  if (timeNow > nineAmTime) {
     nineAm.removeClass('present');
     nineAm.removeClass('future');
     nineAm.addClass('past');
@@ -107,11 +112,13 @@ console.log(nineAmTime);
     tenAm.removeClass('past');
     tenAm.removeClass('future');
     tenAm.addClass('present');
-  } else if (timeNow < tenAmTime) {
+  }
+  if (timeNow < tenAmTime) {
     tenAm.removeClass('past');
     tenAm.removeClass('present');
     tenAm.addClass('future');
-  } else if (timeNow > tenAmTime) {
+  }
+  if (timeNow > tenAmTime) {
     tenAm.removeClass('present');
     tenAm.removeClass('future');
     tenAm.addClass('past');
@@ -121,11 +128,13 @@ console.log(nineAmTime);
     elevenAm.removeClass('past');
     elevenAm.removeClass('future');
     elevenAm.addClass('present');
-  } else if (timeNow < elevenAmTime) {
+  }
+  if (timeNow < elevenAmTime) {
     elevenAm.removeClass('past');
     elevenAm.removeClass('present');
     elevenAm.addClass('future');
-  } else if (timeNow > elevenAmTime) {
+  }
+  if (timeNow > elevenAmTime) {
     elevenAm.removeClass('present');
     elevenAm.removeClass('future');
     elevenAm.addClass('past');
@@ -136,11 +145,13 @@ console.log(nineAmTime);
     twelvePm.removeClass('past');
     twelvePm.removeClass('future');
     twelvePm.addClass('present');
-  } else if (timeNow < twelvePmTime) {
+  }
+  if (timeNow < twelvePmTime) {
     twelvePm.removeClass('past');
     twelvePm.removeClass('present');
     twelvePm.addClass('future');
-  } else if (timeNow > twelvePmTime) {
+  }
+  if (timeNow > twelvePmTime) {
     twelvePm.removeClass('present');
     twelvePm.removeClass('future');
     twelvePm.addClass('past');
@@ -150,11 +161,13 @@ console.log(nineAmTime);
     onePm.removeClass('past');
     onePm.removeClass('future');
     onePm.addClass('present');
-  } else if (timeNow < onePmTime) {
+  }
+  if (timeNow < onePmTime) {
     onePm.removeClass('past');
     onePm.removeClass('present');
     onePm.addClass('future');
-  } else if (timeNow >onePmTime) {
+  }
+  if (timeNow >onePmTime) {
     onePm.removeClass('present');
     onePm.removeClass('future');
     onePm.addClass('past');
@@ -164,11 +177,13 @@ console.log(nineAmTime);
     twoPm.removeClass('past');
     twoPm.removeClass('future');
     twoPm.addClass('present');
-  } else if (timeNow < twoPmTime) {
+  }
+  if (timeNow < twoPmTime) {
     twoPm.removeClass('past');
     twoPm.removeClass('present');
     twoPm.addClass('future');
-  } else if (timeNow > twoPmTime) {
+  }
+  if (timeNow > twoPmTime) {
     twoPm.removeClass('present');
     twoPm.removeClass('future');
     twoPm.addClass('past');
@@ -179,11 +194,13 @@ console.log(nineAmTime);
     threePm.removeClass('past');
     threePm.removeClass('future');
     threePm.addClass('present');
-  } else if (timeNow < threePmTime) {
+  }
+  if (timeNow < threePmTime) {
     threePm.removeClass('past');
     threePm.removeClass('present');
     threePm.addClass('future');
-  } else if (timeNow > threePmTime) {
+  }
+  if (timeNow > threePmTime) {
     threePm.removeClass('present');
     threePm.removeClass('future');
     threePm.addClass('past');
@@ -194,11 +211,13 @@ console.log(nineAmTime);
     fourPm.removeClass('past');
     fourPm.removeClass('future');
     fourPm.addClass('present');
-  } else if (timeNow < fourPmTime) {
+  }
+  if (timeNow < fourPmTime) {
     fourPm.removeClass('past');
     fourPm.removeClass('present');
     twoPm.addClass('future');
-  } else if (timeNow > fourPmTime) {
+  }
+  if (timeNow > fourPmTime) {
     fourPm.removeClass('present');
     fourPm.removeClass('future');
     fourPm.addClass('past');
@@ -209,11 +228,13 @@ console.log(nineAmTime);
     fivePm.removeClass('past');
     fivePm.removeClass('future');
     fivePm.addClass('present');
-  } else if (timeNow < fivePmTime) {
+  }
+  if (timeNow < fivePmTime) {
     fivePm.removeClass('past');
     fivePm.removeClass('present');
     fivePm.addClass('future');
-  } else if (timeNow > fivePmTime) {
+  }
+  if (timeNow > fivePmTime) {
     fivePm.removeClass('present');
     fivePm.removeClass('future');
     fivePm.addClass('past');
@@ -224,29 +245,17 @@ console.log(nineAmTime);
     sixPm.removeClass('past');
     sixPm.removeClass('future');
     sixPm.addClass('present');
-  } else if (timeNow < sixPmTime) {
+  }
+  if (timeNow < sixPmTime) {
     sixPm.removeClass('past');
     sixPm.removeClass('present');
     sixPm.addClass('future');
-  } else if (timeNow > sixPmTime) {
+  }
+  if (timeNow > sixPmTime) {
     sixPm.removeClass('present');
     sixPm.removeClass('future');
     sixPm.addClass('past');
   }
 
 
-
-  $("#hour8 .description").val(localStorage.getItem("hour8"));
-  $("#hour9 .description").val(localStorage.getItem("hour9"));
-  $("#hour10 .description").val(localStorage.getItem("hour10"));
-  $("#hour11 .description").val(localStorage.getItem("hour11"));
-  $("#hour12 .description").val(localStorage.getItem("hour12"));
-  $("#hour13 .description").val(localStorage.getItem("hour13"));
-  $("#hour14 .description").val(localStorage.getItem("hour14"));
-  $("#hour15 .description").val(localStorage.getItem("hour15"));
-  $("#hour16 .description").val(localStorage.getItem("hour16"));
-  $("#hour17 .description").val(localStorage.getItem("hour17"));
-
-
-
-})
+});
