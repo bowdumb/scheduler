@@ -65,7 +65,7 @@ var fourPm = $('#hour-4')
 var fivePm = $('#hour-5')
 var sixPm = $('#hour-6')
 
-
+// Created additional variables to assign each block a time using the .set() property of Day.js to be compared against the current global time in order to assess appropriate color status.
 var nineAmTime = dayjs().set('hour', 9)
 var tenAmTime  = dayjs().set('hour', 10)
 var elevenAmTime = dayjs().set('hour', 11)
@@ -80,104 +80,150 @@ var sixPmTime = dayjs().set('hour', 6)
 console.log(nineAmTime);
   
 
-  // if (hourNow > nineAmTime) {
-  //   nineAm.addClass(past)
-  //   nineAm.removeClass('present');
-  //   nineAm.removeClass('future');
-  // }
-
+// Added conditional 'if' statements for all blocks between 9am-6pm intended to check against local time, remove existing classes, and replace with appropriate classes where appropriate.
   if (timeNow == nineAmTime) {
     nineAm.removeClass('past');
     nineAm.removeClass('future');
     nineAm.addClass('present');
-  } else if (timeNow > nineAmTime) {
-    nineAm.removeClass('present');
-    nineAm.removeClass('future');
-    nineAm.addClass('past');
   } else if (timeNow < nineAmTime) {
     nineAm.removeClass('past');
     nineAm.removeClass('present');
     nineAm.addClass('future');
+  } else if (timeNow > nineAmTime) {
+    nineAm.removeClass('present');
+    nineAm.removeClass('future');
+    nineAm.addClass('past');
   }
-
+  
+  
   if (timeNow == tenAmTime) {
     tenAm.removeClass('past');
     tenAm.removeClass('future');
     tenAm.addClass('present');
-  } else if (timeNow > tenAmTime) {
-    tenAm.removeClass('present');
-    tenAm.removeClass('future');
-    tenAm.addClass('past');
   } else if (timeNow < tenAmTime) {
     tenAm.removeClass('past');
     tenAm.removeClass('present');
     tenAm.addClass('future');
-  }
+  } else if (timeNow > tenAmTime) {
+    tenAm.removeClass('present');
+    tenAm.removeClass('future');
+    tenAm.addClass('past');
+  } 
 
   if (timeNow == elevenAmTime) {
     elevenAm.removeClass('past');
     elevenAm.removeClass('future');
     elevenAm.addClass('present');
-  } else if (timeNow > elevenAmTime) {
-    elevenAm.removeClass('present');
-    elevenAm.removeClass('future');
-    elevenAm.addClass('past');
   } else if (timeNow < elevenAmTime) {
     elevenAm.removeClass('past');
     elevenAm.removeClass('present');
     elevenAm.addClass('future');
-  }
+  } else if (timeNow > elevenAmTime) {
+    elevenAm.removeClass('present');
+    elevenAm.removeClass('future');
+    elevenAm.addClass('past');
+  } 
   
   
   if (timeNow == twelvePmTime) {
     twelvePm.removeClass('past');
     twelvePm.removeClass('future');
     twelvePm.addClass('present');
-  } else if (timeNow > twelvePm) {
+  } else if (timeNow < twelvePmTime) {
+    twelvePm.removeClass('past');
+    twelvePm.removeClass('present');
+    twelvePm.addClass('future');
+  } else if (timeNow > twelvePmTime) {
     twelvePm.removeClass('present');
     twelvePm.removeClass('future');
-    twelvePm.addClass('past')
+    twelvePm.addClass('past');
   }
-  // if (hourNow < nineAm) {
-  //   nineAm.addClass("future");
-  // }
 
-  // if (hourNow > tenAm) {
-  //   tenAm.addClass("past");
-  //   tenAm.removeClass('future');
-  //   tenAm.removeClass('present');
-  // }
-  
-  // if (hourNow == tenAm) {
-  //   tenAm.addClass('present');
-  // }
+  if (timeNow == onePmTime) {
+    onePm.removeClass('past');
+    onePm.removeClass('future');
+    onePm.addClass('present');
+  } else if (timeNow < onePmTime) {
+    onePm.removeClass('past');
+    onePm.removeClass('present');
+    onePm.addClass('future');
+  } else if (timeNow >onePmTime) {
+    onePm.removeClass('present');
+    onePm.removeClass('future');
+    onePm.addClass('past');
+  }
 
-  // //    
+  if (timeNow == twoPmTime) {
+    twoPm.removeClass('past');
+    twoPm.removeClass('future');
+    twoPm.addClass('present');
+  } else if (timeNow < twoPmTime) {
+    twoPm.removeClass('past');
+    twoPm.removeClass('present');
+    twoPm.addClass('future');
+  } else if (timeNow > twoPmTime) {
+    twoPm.removeClass('present');
+    twoPm.removeClass('future');
+    twoPm.addClass('past');
+  }
 
-  // if (hourNow < fivePm) {
-  //   fivePm.addClass('future');
-  // }
 
-  if (hourNow == fivePm) {
+  if (timeNow == threePmTime) {
+    threePm.removeClass('past');
+    threePm.removeClass('future');
+    threePm.addClass('present');
+  } else if (timeNow < threePmTime) {
+    threePm.removeClass('past');
+    threePm.removeClass('present');
+    threePm.addClass('future');
+  } else if (timeNow > threePmTime) {
+    threePm.removeClass('present');
+    threePm.removeClass('future');
+    threePm.addClass('past');
+  }
+
+
+  if (timeNow == fourPmTime) {
+    fourPm.removeClass('past');
+    fourPm.removeClass('future');
+    fourPm.addClass('present');
+  } else if (timeNow < fourPmTime) {
+    fourPm.removeClass('past');
+    fourPm.removeClass('present');
+    twoPm.addClass('future');
+  } else if (timeNow > fourPmTime) {
+    fourPm.removeClass('present');
+    fourPm.removeClass('future');
+    fourPm.addClass('past');
+  }
+
+
+  if (timeNow == fivePmTime) {
+    fivePm.removeClass('past');
+    fivePm.removeClass('future');
     fivePm.addClass('present');
-  }
-
-  if (hourNow > fivePm) {
+  } else if (timeNow < fivePmTime) {
+    fivePm.removeClass('past');
+    fivePm.removeClass('present');
+    fivePm.addClass('future');
+  } else if (timeNow > fivePmTime) {
+    fivePm.removeClass('present');
+    fivePm.removeClass('future');
     fivePm.addClass('past');
   }
-  
-  
-  if (hourNow < sixPm) {
+
+
+  if (timeNow == sixPmTime) {
+    sixPm.removeClass('past');
+    sixPm.removeClass('future');
+    sixPm.addClass('present');
+  } else if (timeNow < sixPmTime) {
+    sixPm.removeClass('past');
+    sixPm.removeClass('present');
     sixPm.addClass('future');
-  
-
+  } else if (timeNow > sixPmTime) {
+    sixPm.removeClass('present');
+    sixPm.removeClass('future');
+    sixPm.addClass('past');
   }
-
-
-
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-  //
-  // TODO: Add code to display the current date in the header of the page.
-});
+})
