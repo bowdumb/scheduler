@@ -91,29 +91,53 @@ console.log(nineAmTime);
     nineAm.removeClass('future');
     nineAm.addClass('present');
   } else if (timeNow > nineAmTime) {
-    nineAm.removeClass('present')
-    nineAm.removeClass('future')
-    nineAm.addClass('past')
+    nineAm.removeClass('present');
+    nineAm.removeClass('future');
+    nineAm.addClass('past');
   } else if (timeNow < nineAmTime) {
-    nineAm.removeClass('past')
-    nineAm.removeClass('present')
-    nineAm.addClass('future')
+    nineAm.removeClass('past');
+    nineAm.removeClass('present');
+    nineAm.addClass('future');
   }
 
   if (timeNow == tenAmTime) {
-    tenAm.removeClass('past')
-    tenAm.removeClass('future')
-    tenAm.addClass('present')
+    tenAm.removeClass('past');
+    tenAm.removeClass('future');
+    tenAm.addClass('present');
   } else if (timeNow > tenAmTime) {
-    tenAm.removeClass('present')
-    tenAm.removeClass('future')
-    tenAm.addclass('past')
+    tenAm.removeClass('present');
+    tenAm.removeClass('future');
+    tenAm.addClass('past');
   } else if (timeNow < tenAmTime) {
-    tenAm.removeClass('past')
-    tenAm.removeClass('present')
-    tenAm.addClass('future')
+    tenAm.removeClass('past');
+    tenAm.removeClass('present');
+    tenAm.addClass('future');
   }
 
+  if (timeNow == elevenAmTime) {
+    elevenAm.removeClass('past');
+    elevenAm.removeClass('future');
+    elevenAm.addClass('present');
+  } else if (timeNow > elevenAmTime) {
+    elevenAm.removeClass('present');
+    elevenAm.removeClass('future');
+    elevenAm.addClass('past');
+  } else if (timeNow < elevenAmTime) {
+    elevenAm.removeClass('past');
+    elevenAm.removeClass('present');
+    elevenAm.addClass('future');
+  }
+  
+  
+  if (timeNow == twelvePmTime) {
+    twelvePm.removeClass('past');
+    twelvePm.removeClass('future');
+    twelvePm.addClass('present');
+  } else if (timeNow > twelvePm) {
+    twelvePm.removeClass('present');
+    twelvePm.removeClass('future');
+    twelvePm.addClass('past')
+  }
   // if (hourNow < nineAm) {
   //   nineAm.addClass("future");
   // }
