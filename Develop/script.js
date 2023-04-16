@@ -6,7 +6,7 @@
 
 
 
-//This code does not work, but I feel like it might be heading in the right direction. Commenting out for now.
+// This code does not work, but I feel like it might be heading in the right direction. Commenting out for now.
 //   $('button').each(function(index) {
 //     this.on('click', function ()
 //       localStorage.setItem('.description', 'id'))
@@ -95,52 +95,52 @@ var sixPm = $('#hour-6')
   //Changed timeNow arguement to timeNow.hour() in order to compare solely the hour value of the timeNow object.
 
   if (timeNow.hour() == 9) {
+    nineAm.addClass('present');
     nineAm.removeClass('past');
     nineAm.removeClass('future');
-    nineAm.addClass('present');
   }
   if (timeNow.hour() < 9) {
+    nineAm.addClass('future');
     nineAm.removeClass('past');
     nineAm.removeClass('present');
-    nineAm.addClass('future');
   }
   if (timeNow.hour() > 9) {
+    nineAm.addClass('past');
     nineAm.removeClass('present');
     nineAm.removeClass('future');
-    nineAm.addClass('past');
   }
   
   
   if (timeNow.hour() == 10) {
+    tenAm.addClass('present');
     tenAm.removeClass('past');
     tenAm.removeClass('future');
-    tenAm.addClass('present');
   }
   if (timeNow.hour() < 10) {
+    tenAm.addClass('future');
     tenAm.removeClass('past');
     tenAm.removeClass('present');
-    tenAm.addClass('future');
   }
   if (timeNow.hour() > 10) {
+    tenAm.addClass('past');
     tenAm.removeClass('present');
     tenAm.removeClass('future');
-    tenAm.addClass('past');
   } 
 
   if (timeNow.hour() == 11) {
+    elevenAm.addClass('present');
     elevenAm.removeClass('past');
     elevenAm.removeClass('future');
-    elevenAm.addClass('present');
   }
   if (timeNow.hour() < 11) {
+    elevenAm.addClass('future');
     elevenAm.removeClass('past');
     elevenAm.removeClass('present');
-    elevenAm.addClass('future');
   }
   if (timeNow.hour() > 11) {
+    elevenAm.addClass('past');
     elevenAm.removeClass('present');
     elevenAm.removeClass('future');
-    elevenAm.addClass('past');
   } 
   
   
@@ -163,103 +163,103 @@ var sixPm = $('#hour-6')
   }
 
   if (timeNow.hour() == 13) {
+    onePm.addClass('present');
     onePm.removeClass('past');
     onePm.removeClass('future');
-    onePm.addClass('present');
   }
   if (timeNow.hour() < 13) {
+    onePm.addClass('future');
     onePm.removeClass('past');
     onePm.removeClass('present');
-    onePm.addClass('future');
   }
   if (timeNow.hour() > 13) {
+    onePm.addClass('past');
     onePm.removeClass('present');
     onePm.removeClass('future');
-    onePm.addClass('past');
   }
 
   if (timeNow.hour() == 14) {
+    twoPm.addClass('present');
     twoPm.removeClass('past');
     twoPm.removeClass('future');
-    twoPm.addClass('present');
   }
   if (timeNow.hour() < 14) {
+    twoPm.addClass('future');
     twoPm.removeClass('past');
     twoPm.removeClass('present');
-    twoPm.addClass('future');
   }
   if (timeNow.hour() > 14) {
+    twoPm.addClass('past');
     twoPm.removeClass('present');
     twoPm.removeClass('future');
-    twoPm.addClass('past');
   }
 
 
   if (timeNow.hour() == 15) {
+    threePm.addClass('present');
     threePm.removeClass('past');
     threePm.removeClass('future');
-    threePm.addClass('present');
   }
   if (timeNow.hour() < 15) {
+    threePm.addClass('future');
     threePm.removeClass('past');
     threePm.removeClass('present');
-    threePm.addClass('future');
   }
   if (timeNow.hour() > 15) {
+    threePm.addClass('past');
     threePm.removeClass('present');
     threePm.removeClass('future');
-    threePm.addClass('past');
   }
 
 
   if (timeNow.hour() == 16) {
+    fourPm.addClass('present');
     fourPm.removeClass('past');
     fourPm.removeClass('future');
-    fourPm.addClass('present');
   }
   if (timeNow.hour() < 16) {
+    twoPm.addClass('future');
     fourPm.removeClass('past');
     fourPm.removeClass('present');
-    twoPm.addClass('future');
   }
   if (timeNow.hour() > 16) {
+    fourPm.addClass('past');
     fourPm.removeClass('present');
     fourPm.removeClass('future');
-    fourPm.addClass('past');
   }
 
 
   if (timeNow.hour() == 17) {
+    fivePm.addClass('present');
     fivePm.removeClass('past');
     fivePm.removeClass('future');
-    fivePm.addClass('present');
   }
   if (timeNow.hour() < 17) {
+    fivePm.addClass('future');
     fivePm.removeClass('past');
     fivePm.removeClass('present');
-    fivePm.addClass('future');
   }
   if (timeNow.hour() > 17) {
+    fivePm.addClass('past');
     fivePm.removeClass('present');
     fivePm.removeClass('future');
-    fivePm.addClass('past');
   }
 
 
   if (timeNow.hour() == 18) {
+    sixPm.addClass('present');
     sixPm.removeClass('past');
     sixPm.removeClass('future');
-    sixPm.addClass('present');
   }
   if (timeNow.hour() < 18) {
+    sixPm.addClass('future');
     sixPm.removeClass('past');
     sixPm.removeClass('present');
-    sixPm.addClass('future');
   }
   if (timeNow.hour() > 18) {
+    sixPm.addClass('past');
     sixPm.removeClass('present');
     sixPm.removeClass('future');
-    sixPm.addClass('past');
   }
 
 
