@@ -2,30 +2,15 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 
-// Added timeNow variable, which displays the current date/time within the header.
+
+// //Removing hourNow variable as I think it was a misstep.
+// var hourNow = dayjs().format('H')
+//   console.log(hourNow);
+//   // console.log(timeNow);
+//   // console.log(nineAmTime);
 
 
-
-// This code does not work, but I feel like it might be heading in the right direction. Commenting out for now.
-//   $('button').each(function(index) {
-//     this.on('click', function ()
-//       localStorage.setItem('.description', 'id'))
-// });
-
-$(function () {
-  // TODO: Add a listener for click events on the save button. This code should
-  // use the id in the containing time-block as a key to save the user input in
-  // local storage. HINT: What does `this` reference in the click listener
-  // function? How can DOM traversal be used to get the "hour-x" id of the
-  // time-block containing the button that was clicked? How might the id be
-  // useful when saving the description in local storage?
-
-  
-
-  
-  
-  // var saveButtons = document.querySelectorAll('.saveBtn');
-  //   console.log(saveButtons);
+ //   console.log(saveButtons);
   
   //   for (i=0; saveButtons.length; i++) {
   //     saveButtons[i].addEventListener('click', function(){
@@ -47,6 +32,46 @@ $(function () {
 
   // } )
 
+
+
+
+ // TODO: Add a listener for click events on the save button. This code should
+  // use the id in the containing time-block as a key to save the user input in
+  // local storage. HINT: What does `this` reference in the click listener
+  // function? How can DOM traversal be used to get the "hour-x" id of the
+  // time-block containing the button that was clicked? How might the id be
+  // useful when saving the description in local storage?
+
+
+
+
+$(function () {
+  var timeNow = dayjs()
+$('#currentDay').text(timeNow.format('dddd, MMMM D YYYY, h:mm a'));
+  var $saveButtons = $('.saveBtn');
+
+
+
+  $saveButtons.on('click', function() {
+    var $thisButton = $(this);
+    var siblingTextArea = $thisButton.siblings('.description')
+    var inputValue = siblingTextArea.val()
+    var timeBlockEl = $thisButton.parent()
+    var timeBlockId = timeBlockEl.attr('id')
+    console.log(timeBlockId)
+    localStorage.setItem(timeBlockId,inputValue)
+  });
+
+  
+  $('.time-block').each(function(){
+    var $thisTimeBlock = $(this);
+    var timeBlockId = $thisTimeBlock.attr('id') //String method will be helpful.
+
+    timeBlockHour = $(this).attr("id").split('hour',[9]);
+    console.log(timeBlockHour);
+  })
+
+ 
   //
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
@@ -55,16 +80,12 @@ $(function () {
   // current hour in 24-hour time?
   //
 
-//Removing hourNow variable as I think it was a misstep.
-var timeNow = dayjs()
-$('#currentDay').text(timeNow.format('dddd, MMMM D YYYY, h:mm a'));
-// console.log(timeNow);
 
-var hourNow = dayjs().format('H')
-  console.log(hourNow);
-  // console.log(timeNow);
-  // console.log(nineAmTime);
-  console.log(timeNow.hour());
+
+// Added timeNow variable, which displays the current date/time within the header.
+
+
+console.log(timeNow.hour());
   
 // Added variables for the hours of the workday, assigning them to the IDs of their respetive hour blocks. Next step is hopefully to create conditional statements to determine color.
 var nineAm = $("#hour-9")
@@ -246,21 +267,21 @@ var sixPm = $('#hour-6')
   }
 
 
-  if (timeNow.hour() == 18) {
-    sixPm.addClass('present');
-    sixPm.removeClass('past');
-    sixPm.removeClass('future');
-  }
-  if (timeNow.hour() < 18) {
-    sixPm.addClass('future');
-    sixPm.removeClass('past');
-    sixPm.removeClass('present');
-  }
-  if (timeNow.hour() > 18) {
-    sixPm.addClass('past');
-    sixPm.removeClass('present');
-    sixPm.removeClass('future');
-  }
+  // if (timeNow.hour() == 18) {
+  //   sixPm.addClass('present');
+  //   sixPm.removeClass('past');
+  //   sixPm.removeClass('future');
+  // }
+  // if (timeNow.hour() < 18) {
+  //   sixPm.addClass('future');
+  //   sixPm.removeClass('past');
+  //   sixPm.removeClass('present');
+  // }
+  // if (timeNow.hour() > 18) {
+  //   sixPm.addClass('past');
+  //   sixPm.removeClass('present');
+  //   sixPm.removeClass('future');
+  // }
 
 
 });
