@@ -59,32 +59,21 @@ $('#currentDay').text(timeNow.format('dddd, MMMM D YYYY, h:mm a'));
     var timeBlockEl = $thisButton.parent()
     var timeBlockId = timeBlockEl.attr('id')
     
-    console.log(timeBlockId)
     localStorage.setItem(timeBlockId,inputValue)
-    localStorage.getItem(timeBlockId, inputValue)
 
     
+   
+    
+   
   });
 
   
   $('.time-block').each(function(){
     var $thisTimeBlock = $(this);
     var timeBlockId = $thisTimeBlock.attr('id').split('hour-',  [2]) //String method will be helpful.
-    console.log(timeBlockId[1]) 
     timeBlockHour = ($(this).attr("id").split('hour-',[2]));
-    // console.log(timeBlockHour);
-    // console.log(timeBlockHour[0])
-  //   $(inputValue).ready().on('load', function() {
-  //     localStorage.getItem('hour-9');
-  // localStorage.getItem('hour-10');
-  // localStorage.getItem('hour-11');
-  // localStorage.getItem('hour-12');
-  // localStorage.getItem('hour-13');
-  // localStorage.getItem('hour-14');
-  // localStorage.getItem('hour-15');
-  // localStorage.getItem('hour-16');
-  // localStorage.getItem(('hour-17'));
-    // })
+   
+    
   
   if (timeBlockId[1] == timeNow.hour()) {
       $(this).addClass('present');
@@ -101,31 +90,38 @@ $('#currentDay').text(timeNow.format('dddd, MMMM D YYYY, h:mm a'));
       $(this).removeClass('future');
       $(this).removeClass('present');
   }
+
+//Targets the id and classes, and inputs the corresponding key values from local storage. 
+$("#hour-9 .description").val(localStorage.getItem("hour-9"));
+$("#hour-10 .description").val(localStorage.getItem("hour-10"));
+$("#hour-11 .description").val(localStorage.getItem("hour-11"));
+$("#hour-12 .description").val(localStorage.getItem("hour-12"));
+$("#hour-13 .description").val(localStorage.getItem("hour-13"));
+$("#hour-14 .description").val(localStorage.getItem("hour-14"));
+$("#hour-15 .description").val(localStorage.getItem("hour-15"));
+$("#hour-16 .description").val(localStorage.getItem("hour-16"));
+$("#hour-17 .description").val(localStorage.getItem("hour-17"));
+  //  storageString = textAreaInput.toString()
+  //  console.log(storageString[5]);
+  //  textAreaInput.on('load', timeBlockId);
   
   })
-  var inputLoadNine = localStorage.getItem('hour-9');
-  var inputLoadTen = localStorage.getItem('hour-10');
-  var inputLoadEleven = localStorage.getItem('hour-11');
-  var inputLoadTwelve = localStorage.getItem('hour-12');
-  var inputLoadOne = localStorage.getItem('hour-13');
-  var inputLoadTwo = localStorage.getItem('hour-14');
-  var inputLoadThree = localStorage.getItem('hour-15');
-  var inputLoadFour = localStorage.getItem('hour-16');
-  var inputLoadFive = localStorage.getItem('hour-17');
- console.log(inputLoadFive)
+  // var inputLoadNine = localStorage.getItem('hour-9');
+  // var inputLoadTen = localStorage.getItem('hour-10');
+  // var inputLoadEleven = localStorage.getItem('hour-11');
+  // var inputLoadTwelve = localStorage.getItem('hour-12');
+  // var inputLoadOne = localStorage.getItem('hour-13');
+  // var inputLoadTwo = localStorage.getItem('hour-14');
+  // var inputLoadThree = localStorage.getItem('hour-15');
+  // var inputLoadFour = localStorage.getItem('hour-16');
+  // var inputLoadFive = localStorage.getItem('hour-17');
+//  console.log(inputLoadFive)
 
- var textAreaInput = [
-  localStorage.getItem('hour-9'),
-  localStorage.getItem('hour-10'),
-  localStorage.getItem('hour-11'),
-  localStorage.getItem('hour-12'),
-  localStorage.getItem('hour-13'),
-  localStorage.getItem('hour-14'),
-  localStorage.getItem('hour-15'),
-  localStorage.getItem('hour-16'),
-  localStorage.getItem('hour-17')
- ]
- console.log(textAreaInput);
+
+//  var getLocal = localStorage.getItem())
+
+
+//  console.log(textAreaInput);
 })
 
 // $('#hour9 .description').val(localStorage.getItem()));
