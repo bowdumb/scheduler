@@ -5,7 +5,7 @@ Using starter-code as the base of this application, I have added my own code in 
 
 ## Installation
 
-This application has been deployed via GitHub Pages, and can be used by following the deployment link within this GitHub repository, or directly through this URL: https://github.com/claxCode/scheduler . Additionally, this application may be accessed by downloading the files locally and opening them within VSCode, or equivalent software.
+This application has been deployed via GitHub Pages, and can be used by following the deployment link within this GitHub repository, or directly through this URL: https://claxcode.github.io/scheduler/ . Additionally, this application may be accessed by downloading the files locally and opening them within VSCode, or equivalent software.
 
 ## Functionality
 
